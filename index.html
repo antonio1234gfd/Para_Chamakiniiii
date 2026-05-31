@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Para Alguien Muy Especial 💖</title>
+  <title>Para Mi Mejor Amiga 💖</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
   <style>
     *{
@@ -15,122 +15,117 @@
     }
 
     body{
-      font-family:'Poppins',sans-serif;
-      overflow:hidden;
-      background:linear-gradient(135deg,#ffdde1,#ee9ca7,#fad0c4);
-      height:100vh;
+      font-family:'Playfair Display',serif;
+      overflow-x:hidden;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      min-height:100vh;
       display:flex;
       justify-content:center;
       align-items:center;
       position:relative;
     }
 
-    .container{
-      width:90%;
-      max-width:850px;
-      background:rgba(255,255,255,0.15);
-      backdrop-filter:blur(12px);
-      border:1px solid rgba(255,255,255,0.3);
-      border-radius:30px;
-      padding:50px;
-      text-align:center;
-      color:white;
-      box-shadow:0 10px 40px rgba(0,0,0,0.2);
-      animation:fadeIn 2s ease;
-      z-index:10;
-    }
-
-    h1{
-      font-family:'Dancing Script',cursive;
-      font-size:4rem;
-      margin-bottom:20px;
-      text-shadow:0 4px 10px rgba(0,0,0,0.2);
-      animation:float 3s ease-in-out infinite;
-    }
-
-    .subtitle{
-      font-size:1.3rem;
-      margin-bottom:30px;
-      opacity:0.95;
-    }
-
-    .message{
-      font-size:1.15rem;
-      line-height:2;
-      font-weight:300;
-    }
-
-    .highlight{
-      font-weight:700;
-      color:#fff7f9;
-      text-shadow:0 0 10px rgba(255,255,255,0.6);
-    }
-
-    .btn{
-      margin-top:35px;
-      padding:14px 28px;
-      border:none;
-      border-radius:50px;
-      background:white;
-      color:#ff4f81;
-      font-size:1rem;
-      font-weight:700;
-      cursor:pointer;
-      transition:0.3s;
-      box-shadow:0 8px 20px rgba(0,0,0,0.2);
-    }
-
-    .btn:hover{
-      transform:scale(1.08);
-      background:#fff0f4;
-    }
-
-    .heart{
-      position:absolute;
-      color:white;
-      font-size:20px;
-      animation:fall linear infinite;
-      opacity:0.8;
-    }
-
-    .glow{
-      position:absolute;
-      width:400px;
-      height:400px;
-      background:rgba(255,255,255,0.15);
-      border-radius:50%;
-      filter:blur(80px);
+    /* Estrellas flotantes */
+    .stars{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      pointer-events:none;
       z-index:1;
     }
 
-    .glow1{
-      top:-120px;
-      left:-120px;
+    .star{
+      position:absolute;
+      width:4px;
+      height:4px;
+      background:white;
+      border-radius:50%;
+      animation:twinkle 2s ease-in-out infinite;
     }
 
-    .glow2{
-      bottom:-120px;
-      right:-120px;
+    @keyframes twinkle{
+      0%,100%{opacity:0.3;transform:scale(1);}
+      50%{opacity:1;transform:scale(1.5);}
     }
 
-    @keyframes fall{
+    /* Burbujas mágicas */
+    .bubble{
+      position:absolute;
+      border-radius:50%;
+      background:radial-gradient(circle at 30% 30%, rgba(255,255,255,0.3), transparent);
+      border:1px solid rgba(255,255,255,0.2);
+      animation:floatBubble linear infinite;
+    }
+
+    @keyframes floatBubble{
       0%{
-        transform:translateY(-100vh) rotate(0deg);
+        transform:translateY(100vh) rotate(0deg);
         opacity:0;
       }
       10%{
         opacity:1;
       }
       100%{
-        transform:translateY(100vh) rotate(360deg);
+        transform:translateY(-100px) rotate(360deg);
         opacity:0;
       }
     }
 
-    @keyframes fadeIn{
+    /* Contenedor principal */
+    .container{
+      width:95%;
+      max-width:700px;
+      background:linear-gradient(145deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+      backdrop-filter:blur(20px);
+      -webkit-backdrop-filter:blur(20px);
+      border:1px solid rgba(255,255,255,0.15);
+      border-radius:40px;
+      padding:60px 50px;
+      text-align:center;
+      color:white;
+      box-shadow:0 25px 80px rgba(0,0,0,0.4), inset 0 0 60px rgba(255,255,255,0.05);
+      animation:slideUp 1.5s ease-out;
+      position:relative;
+      z-index:10;
+      margin:20px;
+    }
+
+    /* Título decorativo */
+    .decoration-top{
+      font-size:2.5rem;
+      margin-bottom:10px;
+      animation:pulse 2s ease-in-out infinite;
+    }
+
+    h1{
+      font-family:'Great Vibes',cursive;
+      font-size:4.5rem;
+      margin:15px 0 25px;
+      background:linear-gradient(135deg, #fff 0%, #ffb6c1 50%, #fff 100%);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+      text-shadow:none;
+      filter:drop-shadow(0 0 20px rgba(255,182,193,0.5));
+      animation:float 4s ease-in-out infinite;
+    }
+
+    @keyframes float{
+      0%,100%{transform:translateY(0px);}
+      50%{transform:translateY(-12px);}
+    }
+
+    @keyframes pulse{
+      0%,100%{transform:scale(1);}
+      50%{transform:scale(1.1);}
+    }
+
+    @keyframes slideUp{
       from{
         opacity:0;
-        transform:translateY(30px);
+        transform:translateY(60px);
       }
       to{
         opacity:1;
@@ -138,110 +133,361 @@
       }
     }
 
-    @keyframes float{
-      0%,100%{
-        transform:translateY(0px);
+    .subtitle{
+      font-size:1.4rem;
+      margin-bottom:35px;
+      opacity:0.9;
+      font-weight:400;
+      letter-spacing:1px;
+      color:rgba(255,255,255,0.85);
+    }
+
+    .message{
+      font-size:1.15rem;
+      line-height:2.2;
+      font-weight:400;
+      text-align:left;
+    }
+
+    .message p{
+      margin-bottom:20px;
+      padding:20px 25px;
+      background:rgba(255,255,255,0.08);
+      border-radius:20px;
+      border-left:3px solid #ff9eb5;
+      transition:0.3s;
+    }
+
+    .message p:hover{
+      background:rgba(255,255,255,0.12);
+      transform:translateX(5px);
+    }
+
+    .highlight{
+      font-weight:700;
+      color:#ffb6c1;
+      text-shadow:0 0 15px rgba(255,182,193,0.4);
+    }
+
+    /* Botón especial */
+    .btn{
+      margin-top:40px;
+      padding:18px 40px;
+      border:none;
+      border-radius:50px;
+      background:linear-gradient(135deg, #ff9eb5 0%, #ff6b95 100%);
+      color:white;
+      font-size:1.1rem;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.4s;
+      box-shadow:0 10px 30px rgba(255,107,149,0.4);
+      letter-spacing:1px;
+    }
+
+    .btn:hover{
+      transform:scale(1.08) translateY(-3px);
+      box-shadow:0 15px 40px rgba(255,107,149,0.6);
+    }
+
+    .btn:active{
+      transform:scale(0.98);
+    }
+
+    /* Corazones */
+    .floating-hearts{
+      position:absolute;
+      width:100%;
+      height:100%;
+      top:0;
+      left:0;
+      pointer-events:none;
+      overflow:hidden;
+    }
+
+    .floating-heart{
+      position:absolute;
+      font-size:24px;
+      animation:heartFloat 6s ease-in-out infinite;
+      opacity:0;
+    }
+
+    @keyframes heartFloat{
+      0%{
+        transform:translateY(0) scale(0);
+        opacity:0;
       }
-      50%{
-        transform:translateY(-10px);
+      20%{
+        opacity:0.8;
+      }
+      80%{
+        opacity:0.8;
+      }
+      100%{
+        transform:translateY(-100px) scale(1);
+        opacity:0;
       }
     }
 
+    /* Shimmer effect */
+    .shimmer{
+      position:absolute;
+      top:0;
+      left:-100%;
+      width:50%;
+      height:100%;
+      background:linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      animation:shimmer 3s infinite;
+      transform:skewX(-20deg);
+    }
+
+    @keyframes shimmer{
+      0%{left:-100%;}
+      100%{left:200%;}
+    }
+
+    /* Signature */
+    .signature{
+      margin-top:40px;
+      font-family:'Great Vibes',cursive;
+      font-size:2rem;
+      color:#ff9eb5;
+      opacity:0.8;
+    }
+
+    /* Responsive */
     @media(max-width:768px){
       .container{
-        padding:35px 25px;
+        padding:40px 25px;
       }
 
       h1{
-        font-size:3rem;
+        font-size:3.2rem;
       }
 
       .message{
-        font-size:1rem;
+        font-size:1.05rem;
       }
+
+      .message p{
+        padding:15px 18px;
+      }
+    }
+
+    /* Modal secreto */
+    .modal{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background:rgba(0,0,0,0.8);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      z-index:100;
+      opacity:0;
+      visibility:hidden;
+      transition:0.4s;
+    }
+
+    .modal.active{
+      opacity:1;
+      visibility:visible;
+    }
+
+    .modal-content{
+      background:linear-gradient(145deg, #1a1a2e, #16213e);
+      padding:50px 40px;
+      border-radius:30px;
+      text-align:center;
+      color:white;
+      max-width:90%;
+      border:1px solid rgba(255,182,193,0.3);
+      transform:scale(0.8);
+      transition:0.4s;
+    }
+
+    .modal.active .modal-content{
+      transform:scale(1);
+    }
+
+    .modal h2{
+      font-family:'Great Vibes',cursive;
+      font-size:3rem;
+      color:#ff9eb5;
+      margin-bottom:20px;
+    }
+
+    .modal p{
+      font-size:1.2rem;
+      line-height:1.8;
+    }
+
+    .close-btn{
+      position:absolute;
+      top:20px;
+      right:25px;
+      font-size:2rem;
+      color:white;
+      cursor:pointer;
+      opacity:0.7;
+      transition:0.3s;
+    }
+
+    .close-btn:hover{
+      opacity:1;
+      transform:rotate(90deg);
     }
   </style>
 </head>
 <body>
 
-  <div class="glow glow1"></div>
-  <div class="glow glow2"></div>
+  <!-- Estrellas -->
+  <div class="stars" id="stars"></div>
+
+  <!-- Burbujas -->
+  <div class="bubbles" id="bubbles"></div>
 
   <div class="container">
-
-    <h1>Para Ti 💖</h1>
-
+    <div class="floating-hearts" id="floatingHearts"></div>
+    
+    <div class="decoration-top">🌸 ✨ 🌸</div>
+    
+    <h1>Para Ti</h1>
+    
     <p class="subtitle">
-      Hay personas que llegan de repente… y hacen que todo se vea más bonito.
+      Para esa persona que hace más brillante cada día...
     </p>
 
     <div class="message">
       <p>
-        No sé si alguna vez te lo han dicho así,
-        pero <span class="highlight">tu sonrisa tiene algo especial</span>.
+        Sabes quê? 🦋
+        <span class="highlight">Eres de esas personas únicas</span> que iluminan todo a su alrededor sin ni siquiera intentarlo.
       </p>
-
-      <br>
 
       <p>
-        Eres de esas personas que iluminan los días sin darse cuenta,
-        que hacen sentir tranquilidad con una sola conversación,
-        y que dejan recuerdos bonitos incluso en los momentos más simples.
+        Tu risa es contagiosa, tu corazón es gigante,
+        y tu amistad es <span class="highlight">uno de los mayores tesoros</span> que tengo en la vida.
       </p>
-
-      <br>
-
-      <p>
-        Si hoy estás leyendo esto,
-        quiero que recuerdes algo:
-        <span class="highlight">eres increíble exactamente como eres</span>.
-      </p>
-
-      <br>
 
       <p>
         Gracias por existir,
-        por ser tú,
-        y por hacer que el mundo tenga un poquito más de magia. ✨
+        por estar ahí en los momentos buenos y no tan buenos,
+        por entenderme sin palabras y por hacer que cada día sea un poquito más especial. 🌟
+      </p>
+
+      <p>
+        Nunca olvides lo increíbles que eres,
+        porque <span class="highlight">eres única, capaz y merece todo lo bonito</span> que la vida tiene para ofrecerte.
+      </p>
+
+      <p>
+        Te quiero mucho, hoy y siempre! 💕
       </p>
     </div>
 
-    <button class="btn" onclick="showMessage()">
-      💌 Presiona aquí
+    <button class="btn" onclick="openSecret()">
+      💌 Mensaje Secreto
     </button>
 
+    <div class="signature">
+      Con todo mi cariño chamakiniii 💖
+    </div>
+  </div>
+
+  <!-- Modal secreto -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h2>💖 Mi Mejor Amiga 💖</h2>
+      <p>
+        Gracias por ser esa persona special<br><br>
+        Que siempre me hace reír cuando estoy triste,<br>
+        Que me escucha sin juzgar,<br>
+        Y que hace que cada momento sea unforgettable.<br><br>
+        <span class="highlight">Eres la mejor!</span> 🎀
+      </p>
+    </div>
   </div>
 
   <script>
+    // Crear estrellas
+    function createStars(){
+      const starsContainer=document.getElementById('stars');
+      const starCount=80;
 
-    function createHeart(){
-
-      const heart=document.createElement('div');
-
-      heart.classList.add('heart');
-
-      heart.innerHTML='❤';
-
-      heart.style.left=Math.random()*100+'vw';
-
-      heart.style.fontSize=Math.random()*20+15+'px';
-
-      heart.style.animationDuration=Math.random()*5+5+'s';
-
-      document.body.appendChild(heart);
-
-      setTimeout(()=>{
-        heart.remove();
-      },10000);
+      for(let i=0; i<starCount; i++){
+        const star=document.createElement('div');
+        star.classList.add('star');
+        star.style.left=Math.random()*100+'vw';
+        star.style.top=Math.random()*100+'vh';
+        star.style.animationDelay=Math.random()*2+'s';
+        star.style.width=Math.random()*3+2+'px';
+        star.style.height=star.style.width;
+        starsContainer.appendChild(star);
+      }
     }
 
-    setInterval(createHeart,300);
-
-    function showMessage(){
-
-      alert('💖 Ojalá esta pequeña página te saque una sonrisa tan bonita como la tuya 💖');
+    // Crear burbujas
+    function createBubbles(){
+      const bubblesContainer=document.getElementById('bubbles');
+      
+      for(let i=0; i<15; i++){
+        const bubble=document.createElement('div');
+        bubble.classList.add('bubble');
+        
+        const size=Math.random()*60+20;
+        bubble.style.width=size+'px';
+        bubble.style.height=size+'px';
+        bubble.style.left=Math.random()*100+'vw';
+        bubble.style.animationDuration=Math.random()*10+10+'s';
+        bubble.style.animationDelay=Math.random()*5+'s';
+        
+        document.body.appendChild(bubble);
+      }
     }
 
+    // Corazones flotantes
+    function createFloatingHearts(){
+      const container=document.getElementById('floatingHearts');
+      
+      setInterval(()=>{
+        const heart=document.createElement('div');
+        heart.classList.add('floating-heart');
+        heart.innerHTML='💖';
+        heart.style.left=Math.random()*100+'%';
+        heart.style.bottom='-30px';
+        heart.style.animationDuration=Math.random()*4+4+'s';
+        
+        container.appendChild(heart);
+        
+        setTimeout(()=>{
+          heart.remove();
+        },8000);
+      },2000);
+    }
+
+    // Modal functions
+    function openSecret(){
+      document.getElementById('modal').classList.add('active');
+    }
+
+    function closeModal(){
+      document.getElementById('modal').classList.remove('active');
+    }
+
+    // Cerrar modal al hacer click fuera
+    document.getElementById('modal').addEventListener('click',function(e){
+      if(e.target===this){
+        closeModal();
+      }
+    });
+
+    // Inicializar
+    createStars();
+    createBubbles();
+    createFloatingHearts();
   </script>
 
 </body>
