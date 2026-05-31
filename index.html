@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para Alguien Muy Especial 💖</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      overflow:hidden;
+      background:linear-gradient(135deg,#ffdde1,#ee9ca7,#fad0c4);
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      position:relative;
+    }
+
+    .container{
+      width:90%;
+      max-width:850px;
+      background:rgba(255,255,255,0.15);
+      backdrop-filter:blur(12px);
+      border:1px solid rgba(255,255,255,0.3);
+      border-radius:30px;
+      padding:50px;
+      text-align:center;
+      color:white;
+      box-shadow:0 10px 40px rgba(0,0,0,0.2);
+      animation:fadeIn 2s ease;
+      z-index:10;
+    }
+
+    h1{
+      font-family:'Dancing Script',cursive;
+      font-size:4rem;
+      margin-bottom:20px;
+      text-shadow:0 4px 10px rgba(0,0,0,0.2);
+      animation:float 3s ease-in-out infinite;
+    }
+
+    .subtitle{
+      font-size:1.3rem;
+      margin-bottom:30px;
+      opacity:0.95;
+    }
+
+    .message{
+      font-size:1.15rem;
+      line-height:2;
+      font-weight:300;
+    }
+
+    .highlight{
+      font-weight:700;
+      color:#fff7f9;
+      text-shadow:0 0 10px rgba(255,255,255,0.6);
+    }
+
+    .btn{
+      margin-top:35px;
+      padding:14px 28px;
+      border:none;
+      border-radius:50px;
+      background:white;
+      color:#ff4f81;
+      font-size:1rem;
+      font-weight:700;
+      cursor:pointer;
+      transition:0.3s;
+      box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .btn:hover{
+      transform:scale(1.08);
+      background:#fff0f4;
+    }
+
+    .heart{
+      position:absolute;
+      color:white;
+      font-size:20px;
+      animation:fall linear infinite;
+      opacity:0.8;
+    }
+
+    .glow{
+      position:absolute;
+      width:400px;
+      height:400px;
+      background:rgba(255,255,255,0.15);
+      border-radius:50%;
+      filter:blur(80px);
+      z-index:1;
+    }
+
+    .glow1{
+      top:-120px;
+      left:-120px;
+    }
+
+    .glow2{
+      bottom:-120px;
+      right:-120px;
+    }
+
+    @keyframes fall{
+      0%{
+        transform:translateY(-100vh) rotate(0deg);
+        opacity:0;
+      }
+      10%{
+        opacity:1;
+      }
+      100%{
+        transform:translateY(100vh) rotate(360deg);
+        opacity:0;
+      }
+    }
+
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+        transform:translateY(30px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @keyframes float{
+      0%,100%{
+        transform:translateY(0px);
+      }
+      50%{
+        transform:translateY(-10px);
+      }
+    }
+
+    @media(max-width:768px){
+      .container{
+        padding:35px 25px;
+      }
+
+      h1{
+        font-size:3rem;
+      }
+
+      .message{
+        font-size:1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="glow glow1"></div>
+  <div class="glow glow2"></div>
+
+  <div class="container">
+
+    <h1>Para Ti 💖</h1>
+
+    <p class="subtitle">
+      Hay personas que llegan de repente… y hacen que todo se vea más bonito.
+    </p>
+
+    <div class="message">
+      <p>
+        No sé si alguna vez te lo han dicho así,
+        pero <span class="highlight">tu sonrisa tiene algo especial</span>.
+      </p>
+
+      <br>
+
+      <p>
+        Eres de esas personas que iluminan los días sin darse cuenta,
+        que hacen sentir tranquilidad con una sola conversación,
+        y que dejan recuerdos bonitos incluso en los momentos más simples.
+      </p>
+
+      <br>
+
+      <p>
+        Si hoy estás leyendo esto,
+        quiero que recuerdes algo:
+        <span class="highlight">eres increíble exactamente como eres</span>.
+      </p>
+
+      <br>
+
+      <p>
+        Gracias por existir,
+        por ser tú,
+        y por hacer que el mundo tenga un poquito más de magia. ✨
+      </p>
+    </div>
+
+    <button class="btn" onclick="showMessage()">
+      💌 Presiona aquí
+    </button>
+
+  </div>
+
+  <script>
+
+    function createHeart(){
+
+      const heart=document.createElement('div');
+
+      heart.classList.add('heart');
+
+      heart.innerHTML='❤';
+
+      heart.style.left=Math.random()*100+'vw';
+
+      heart.style.fontSize=Math.random()*20+15+'px';
+
+      heart.style.animationDuration=Math.random()*5+5+'s';
+
+      document.body.appendChild(heart);
+
+      setTimeout(()=>{
+        heart.remove();
+      },10000);
+    }
+
+    setInterval(createHeart,300);
+
+    function showMessage(){
+
+      alert('💖 Ojalá esta pequeña página te saque una sonrisa tan bonita como la tuya 💖');
+    }
+
+  </script>
+
+</body>
+</html>
